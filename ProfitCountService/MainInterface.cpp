@@ -6,6 +6,7 @@
 #include "Session.h"
 #include "SmartPointer.hpp"
 #include <iostream>
+#include <algorithm>
 
 using namespace dao;
 
@@ -125,28 +126,29 @@ void GetAllCommand::execute(std::string* args)
 	switch (sortMode)
 	{
 	case 1:
-		products.sort([](const auto& o1, const auto& o2) -> bool {
-			return 1;
+		products.sort([](Product* a, Product* b) -> bool {
+			return (a->name.compare(b->name) < 0);
 		});
+		break;
 	case 2:
-		products.sort([](const auto& o1, const auto& o2) -> bool {
-			return o1->amountBought - o2->amountBought;
-			});
+		products.sort([](Product* a, Product* b) -> bool {
+			return a->amountBought > b->amountBought;
+		});
 		break;
 	case 3:
-		products.sort([](const auto& o1, const auto& o2) -> bool {
-			return o1->amountSold - o2->amountSold;
-			});
+		products.sort([](Product* a, Product* b) -> bool {
+			return a->amountSold > b->amountSold;
+		});
 		break;
 	case 4:
-		products.sort([](const auto& o1, const auto& o2) -> bool {
-			return o1->primaryCost - o2->primaryCost;
-			});
+		products.sort([](Product* a, Product* b) -> bool {
+			return a->primaryCost > b->primaryCost;
+		});
 		break;
 	case 5:
-		products.sort([](const auto& o1, const auto& o2) -> bool {
-			return o1->marketCost - o2->marketCost;
-			});
+		products.sort([](Product* a, Product* b) -> bool {
+			return a->marketCost > b->marketCost;
+		});
 		break;
 	default:
 		break;
