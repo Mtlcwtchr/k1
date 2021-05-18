@@ -1,6 +1,6 @@
 #pragma once
-#include "ProductRepository.h"
 #include "Product.h"
+#include <list>
 
 class TotalDifferenceCalculator
 {

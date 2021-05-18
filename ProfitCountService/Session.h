@@ -1,11 +1,13 @@
 #pragma once
 #include "User.h"
+#include "MainInterface.h"
 
 class Session
 {
 private:
 	static Session* current;
 	User* user = nullptr;
+
 
 public:
 	static Session* getCurrent();
@@ -14,6 +16,7 @@ public:
 	bool isLogged();
 	bool isPromoted();
 
-	void setUser(User* user);
+	friend void AuthCommand::execute(std::string* args);
+	friend void RegCommand::execute(std::string* args);
 };
 

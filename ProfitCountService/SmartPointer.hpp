@@ -3,6 +3,7 @@
 #define SMARTPOINTER_HPP
 
 #include <iostream>
+
 using namespace std;
 
 template<class T>

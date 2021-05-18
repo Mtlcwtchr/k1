@@ -7,6 +7,8 @@
 #include "SmartPointer.hpp"
 #include <iostream>
 
+using namespace dao;
+
 Command* Command::of(std::string name) 
 {
 	Command* command = nullptr;
@@ -52,7 +54,7 @@ void AuthCommand::execute(std::string* args)
 
 	SmartPointer<AuthRepository>* repo = new SmartPointer<AuthRepository>(AuthRepository::of(RepositoryType::TXT));
 
-	Session::getCurrent()->setUser((*repo)->tryAuth(uname, pass));
+	Session::getCurrent()->user = (*repo)->tryAuth(uname, pass);
 }
 
 uint16_t AuthCommand::requiredArgsCount()
@@ -72,7 +74,7 @@ void RegCommand::execute(std::string* args)
 
 	SmartPointer<AuthRepository>* repo = new SmartPointer<AuthRepository>(AuthRepository::of(RepositoryType::TXT));
 
-	Session::getCurrent()->setUser((*repo)->tryRegister(uname, pass));
+	Session::getCurrent()->user = (*repo)->tryAuth(uname, pass);
 }
 
 uint16_t RegCommand::requiredArgsCount()
@@ -123,26 +125,26 @@ void GetAllCommand::execute(std::string* args)
 	switch (sortMode)
 	{
 	case 1:
-		products.sort([](const auto& o1, const auto& o2) {
+		products.sort([](const auto& o1, const auto& o2) -> bool {
 			return 1;
 		});
 	case 2:
-		products.sort([](const auto& o1, const auto& o2) {
+		products.sort([](const auto& o1, const auto& o2) -> bool {
 			return o1->amountBought - o2->amountBought;
 			});
 		break;
 	case 3:
-		products.sort([](const auto& o1, const auto& o2) {
+		products.sort([](const auto& o1, const auto& o2) -> bool {
 			return o1->amountSold - o2->amountSold;
 			});
 		break;
 	case 4:
-		products.sort([](const auto& o1, const auto& o2) {
+		products.sort([](const auto& o1, const auto& o2) -> bool {
 			return o1->primaryCost - o2->primaryCost;
 			});
 		break;
 	case 5:
-		products.sort([](const auto& o1, const auto& o2) {
+		products.sort([](const auto& o1, const auto& o2) -> bool {
 			return o1->marketCost - o2->marketCost;
 			});
 		break;

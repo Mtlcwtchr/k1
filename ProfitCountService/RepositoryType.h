@@ -1,6 +1,9 @@
 #pragma once
 
-enum RepositoryType
+namespace dao
 {
-	TXT
+	enum RepositoryType
+	{
+		TXT
+	};
 };

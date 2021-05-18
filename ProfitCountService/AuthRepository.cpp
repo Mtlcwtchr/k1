@@ -3,6 +3,8 @@
 #include <fstream>
 #include <iostream>
 
+using namespace dao;
+
 TxtAuthRepository::TxtAuthRepository(std::string sourcepath)
 {
 	this->sourcepath = sourcepath;

@@ -1,3 +1,113 @@
 ﻿  MainInterface.cpp
 D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\Product.h(28,34): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\MainInterface.cpp(143,27): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\xutility(1624): message : see reference to function template instantiation 'int GetAllCommand::execute::<lambda_675aae4040675706e2edcc36f0adbdd2>::operator ()<_Value_type,_Value_type>(const _Value_type &,const _Value_type &) const' being compiled
+          with
+          [
+              _Value_type=Product *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\list(518): message : see reference to function template instantiation 'bool std::_Debug_lt_pred<_Pr2&,_Value_type&,_Value_type&,0>(_Pr,_Ty1,_Ty2) noexcept(false)' being compiled
+          with
+          [
+              _Pr2=GetAllCommand::execute::<lambda_675aae4040675706e2edcc36f0adbdd2>,
+              _Value_type=Product *,
+              _Pr=GetAllCommand::execute::<lambda_675aae4040675706e2edcc36f0adbdd2> &,
+              _Ty1=Product *&,
+              _Ty2=Product *&
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\list(570): message : see reference to function template instantiation 'std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *std::_List_val<std::_List_simple_types<_Ty>>::_Merge_same<_Pr2>(std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *,std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *,std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *const ,_Pr2)' being compiled
+          with
+          [
+              _Ty=Product *,
+              _Alloc=std::allocator<Product *>,
+              _Pr2=GetAllCommand::execute::<lambda_675aae4040675706e2edcc36f0adbdd2>
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\list(570): message : see reference to function template instantiation 'std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *std::_List_val<std::_List_simple_types<_Ty>>::_Merge_same<_Pr2>(std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *,std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *,std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *const ,_Pr2)' being compiled
+          with
+          [
+              _Ty=Product *,
+              _Alloc=std::allocator<Product *>,
+              _Pr2=GetAllCommand::execute::<lambda_675aae4040675706e2edcc36f0adbdd2>
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\list(1716): message : see reference to function template instantiation 'std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *std::_List_val<std::_List_simple_types<_Ty>>::_Sort<_Fn>(std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *&,const unsigned int,_Pr2)' being compiled
+          with
+          [
+              _Ty=Product *,
+              _Alloc=std::allocator<Product *>,
+              _Fn=GetAllCommand::execute::<lambda_675aae4040675706e2edcc36f0adbdd2>,
+              _Pr2=GetAllCommand::execute::<lambda_675aae4040675706e2edcc36f0adbdd2>
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\list(1716): message : see reference to function template instantiation 'std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *std::_List_val<std::_List_simple_types<_Ty>>::_Sort<_Fn>(std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *&,const unsigned int,_Pr2)' being compiled
+          with
+          [
+              _Ty=Product *,
+              _Alloc=std::allocator<Product *>,
+              _Fn=GetAllCommand::execute::<lambda_675aae4040675706e2edcc36f0adbdd2>,
+              _Pr2=GetAllCommand::execute::<lambda_675aae4040675706e2edcc36f0adbdd2>
+          ]
+D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\MainInterface.cpp(144): message : see reference to function template instantiation 'void std::list<Product *,std::allocator<Product *>>::sort<GetAllCommand::execute::<lambda_675aae4040675706e2edcc36f0adbdd2>>(_Pr2)' being compiled
+          with
+          [
+              _Pr2=GetAllCommand::execute::<lambda_675aae4040675706e2edcc36f0adbdd2>
+          ]
+D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\MainInterface.cpp(142): message : see reference to function template instantiation 'void std::list<Product *,std::allocator<Product *>>::sort<GetAllCommand::execute::<lambda_675aae4040675706e2edcc36f0adbdd2>>(_Pr2)' being compiled
+          with
+          [
+              _Pr2=GetAllCommand::execute::<lambda_675aae4040675706e2edcc36f0adbdd2>
+          ]
+D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\MainInterface.cpp(148,26): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\xutility(1624): message : see reference to function template instantiation 'int GetAllCommand::execute::<lambda_74018d9454a4c364e36b9ed39de75dce>::operator ()<_Value_type,_Value_type>(const _Value_type &,const _Value_type &) const' being compiled
+          with
+          [
+              _Value_type=Product *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\list(518): message : see reference to function template instantiation 'bool std::_Debug_lt_pred<_Pr2&,_Value_type&,_Value_type&,0>(_Pr,_Ty1,_Ty2) noexcept(false)' being compiled
+          with
+          [
+              _Pr2=GetAllCommand::execute::<lambda_74018d9454a4c364e36b9ed39de75dce>,
+              _Value_type=Product *,
+              _Pr=GetAllCommand::execute::<lambda_74018d9454a4c364e36b9ed39de75dce> &,
+              _Ty1=Product *&,
+              _Ty2=Product *&
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\list(570): message : see reference to function template instantiation 'std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *std::_List_val<std::_List_simple_types<_Ty>>::_Merge_same<_Pr2>(std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *,std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *,std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *const ,_Pr2)' being compiled
+          with
+          [
+              _Ty=Product *,
+              _Alloc=std::allocator<Product *>,
+              _Pr2=GetAllCommand::execute::<lambda_74018d9454a4c364e36b9ed39de75dce>
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\list(570): message : see reference to function template instantiation 'std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *std::_List_val<std::_List_simple_types<_Ty>>::_Merge_same<_Pr2>(std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *,std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *,std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *const ,_Pr2)' being compiled
+          with
+          [
+              _Ty=Product *,
+              _Alloc=std::allocator<Product *>,
+              _Pr2=GetAllCommand::execute::<lambda_74018d9454a4c364e36b9ed39de75dce>
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\list(1716): message : see reference to function template instantiation 'std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *std::_List_val<std::_List_simple_types<_Ty>>::_Sort<_Fn>(std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *&,const unsigned int,_Pr2)' being compiled
+          with
+          [
+              _Ty=Product *,
+              _Alloc=std::allocator<Product *>,
+              _Fn=GetAllCommand::execute::<lambda_74018d9454a4c364e36b9ed39de75dce>,
+              _Pr2=GetAllCommand::execute::<lambda_74018d9454a4c364e36b9ed39de75dce>
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\list(1716): message : see reference to function template instantiation 'std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *std::_List_val<std::_List_simple_types<_Ty>>::_Sort<_Fn>(std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *&,const unsigned int,_Pr2)' being compiled
+          with
+          [
+              _Ty=Product *,
+              _Alloc=std::allocator<Product *>,
+              _Fn=GetAllCommand::execute::<lambda_74018d9454a4c364e36b9ed39de75dce>,
+              _Pr2=GetAllCommand::execute::<lambda_74018d9454a4c364e36b9ed39de75dce>
+          ]
+D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\MainInterface.cpp(149): message : see reference to function template instantiation 'void std::list<Product *,std::allocator<Product *>>::sort<GetAllCommand::execute::<lambda_74018d9454a4c364e36b9ed39de75dce>>(_Pr2)' being compiled
+          with
+          [
+              _Pr2=GetAllCommand::execute::<lambda_74018d9454a4c364e36b9ed39de75dce>
+          ]
+D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\MainInterface.cpp(147): message : see reference to function template instantiation 'void std::list<Product *,std::allocator<Product *>>::sort<GetAllCommand::execute::<lambda_74018d9454a4c364e36b9ed39de75dce>>(_Pr2)' being compiled
+          with
+          [
+              _Pr2=GetAllCommand::execute::<lambda_74018d9454a4c364e36b9ed39de75dce>
+          ]
   ProfitCountService.vcxproj -> D:\CPPprog\cpp\kursach\ProfitCountService\Debug\ProfitCountService.exe

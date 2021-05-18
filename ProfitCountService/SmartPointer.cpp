@@ -4,7 +4,9 @@
 #include "MainInterface.h"
 #include <iostream>
 #include <string>
+
 using namespace std;
+using namespace dao;
 
 template SmartPointer<AuthRepository>;
 template SmartPointer<ProductRepository>;

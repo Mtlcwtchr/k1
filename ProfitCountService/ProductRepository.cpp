@@ -1,6 +1,8 @@
 #include "ProductRepository.h"
 #include <fstream>
 
+using namespace dao;
+
 TxtProductRepository::TxtProductRepository(std::string sourcepath) {
 	this->sourcepath = sourcepath;
 }

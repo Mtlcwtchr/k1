@@ -38,11 +38,6 @@ bool Session::isLogged()
 	return user != nullptr;
 }
 
-void Session::setUser(User* user)
-{
-	this->user = user;
-}
-
 Session* Session::getCurrent()
 {
 	if (!Session::current)
