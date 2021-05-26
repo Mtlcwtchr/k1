@@ -8,9 +8,13 @@ Session* Session::current = nullptr;
 
 void Session::tryAuth()
 {
-	std::cout << "¬ведите 0 чтобы войти или 10 чтобы зарегистрироватьс€: " << std::endl;
 	std::string str;
-	cin >> str;
+	do
+	{
+		std::cout << "¬ведите 0 чтобы войти или 10 чтобы зарегистрироватьс€: " << std::endl;
+		cin >> str;
+	} while (str != "0" && str != "10");
+
 	SmartPointer<Command>* command = new SmartPointer<Command>(Command::of(atoi(str.c_str())));
 	if (command)
 	{

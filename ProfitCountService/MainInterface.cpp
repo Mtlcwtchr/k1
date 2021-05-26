@@ -365,11 +365,16 @@ void MainInterface::deploy()
 	while (true)
 	{
 		std::string str;
-		std::cin >> str;
-		if (str == "exit")
+		do
 		{
-			break;
-		}
+			std::cin >> str;
+
+			if (str == "exit")
+			{
+				return;
+			}
+
+		} while (str != "1" && str != "2" && str != "3" && str != "4" && str != "5" && str != "6");
 
 		SmartPointer<Command>* command = new SmartPointer<Command>(Command::of(atoi(str.c_str())));
 		if (command)
