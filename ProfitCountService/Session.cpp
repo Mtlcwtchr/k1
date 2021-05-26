@@ -8,10 +8,10 @@ Session* Session::current = nullptr;
 
 void Session::tryAuth()
 {
-	std::cout << "¬ведите auth чтобы войти или reg чтобы зарегистрироватьс€: " << std::endl;
+	std::cout << "¬ведите 0 чтобы войти или 10 чтобы зарегистрироватьс€: " << std::endl;
 	std::string str;
 	cin >> str;
-	SmartPointer<Command>* command = new SmartPointer<Command>(Command::of(str));
+	SmartPointer<Command>* command = new SmartPointer<Command>(Command::of(atoi(str.c_str())));
 	if (command)
 	{
 		uint16_t requiredArgsCount = (*command)->requiredArgsCount();

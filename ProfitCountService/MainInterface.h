@@ -9,7 +9,7 @@ public:
 	virtual uint16_t requiredArgsCount() = 0;
 	virtual std::string commandManual() = 0;
 
-	static Command* of(std::string);
+	static Command* of(uint16_t);
 };
 
 class AuthCommand : public Command

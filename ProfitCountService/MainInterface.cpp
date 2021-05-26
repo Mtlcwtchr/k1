@@ -10,35 +10,33 @@
 
 using namespace dao;
 
-Command* Command::of(std::string name) 
+Command* Command::of(uint16_t code) 
 {
 	Command* command = nullptr;
-	int hash = std::hash<std::string>()(name);
-	//std::cout << hash;
-	switch (hash)
+	switch (code)
 	{
-	case 1410115415:
+	case 2:
 		command = new GetCommand();
 		break;
-	case -332427470:
+	case 1:
 		command = new GetAllCommand();
 		break;
-	case -1790990257:
+	case 0:
 		command = new AuthCommand();
 		break;
-	case 1140098453:
+	case 10:
 		command = new RegCommand();
 		break;
-	case -855671224:
+	case 5:
 		command = new SaveCommand();
 		break;
-	case -816214454:
+	case 6:
 		command = new DelCommand();
 		break;
-	case -1241294987:
+	case 3:
 		command = new GetProfitCommand();
 		break;
-	case 1708488555:
+	case 4:
 		command = new BuyCommand();
 		break;
 	default:
@@ -73,9 +71,10 @@ void RegCommand::execute(std::string* args)
 	std::string uname = ((std::string*)args)[0];
 	std::string pass = ((std::string*)args)[1];
 
+
 	SmartPointer<AuthRepository>* repo = new SmartPointer<AuthRepository>(AuthRepository::of(RepositoryType::TXT));
 
-	Session::getCurrent()->user = (*repo)->tryAuth(uname, pass);
+	Session::getCurrent()->user = (*repo)->tryRegister(uname, pass);
 }
 
 uint16_t RegCommand::requiredArgsCount()
@@ -354,7 +353,7 @@ void MainInterface::deploy()
 
 	std::cout << "¬ы вошли в систему\n" << std::endl;
 
-	std::cout << "—писок команд дл€ ввода: \n" << "getall - вывод списка всех продуктов\n" << "get - вывод конкретного продукта по имени\n" << "getprofit - вывод итоговой прибыли, необходимы права администратора\n" << "buy - приобретение продукта по имени\n" << "save - сохранение или изменение продукта, необходимы права администратора\n" << "del - удаление существующего продукта по имени, необходимы права администратора\n" << "exit - завершение работы\n";
+	std::cout << "—писок команд дл€ ввода: \n" << "1 - вывод списка всех продуктов\n" << "2 - вывод конкретного продукта по имени\n" << "3 - вывод итоговой прибыли, необходимы права администратора\n" << "4 - приобретение продукта по имени\n" << "5 - сохранение или изменение продукта, необходимы права администратора\n" << "6 - удаление существующего продукта по имени, необходимы права администратора\n" << "exit - завершение работы\n";
 
 	while (true)
 	{
@@ -365,7 +364,7 @@ void MainInterface::deploy()
 			break;
 		}
 
-		SmartPointer<Command>* command = new SmartPointer<Command>(Command::of(str));
+		SmartPointer<Command>* command = new SmartPointer<Command>(Command::of(atoi(str.c_str())));
 		if (command)
 		{
 			uint16_t requiredArgsCount = (*command)->requiredArgsCount();
