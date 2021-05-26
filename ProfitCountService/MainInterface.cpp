@@ -39,6 +39,9 @@ Command* Command::of(uint16_t code)
 	case 4:
 		command = new BuyCommand();
 		break;
+	case 7:
+		command = new GetAllFilteredCommand();
+		break;
 	default:
 		command = new BlankCommand();
 		break;
@@ -171,6 +174,36 @@ std::string GetAllCommand::commandManual()
 	return "Введите 1 для сортировки по имени продукта, 2 - для сортировки по размерам закупки, 3 - для сортировки по размерам продаж, 4 - по цене закупки, 5 - по цене продажи";
 }
 
+
+void GetAllFilteredCommand::execute(std::string* args)
+{
+	SmartPointer<ProductRepository>* repo = new SmartPointer<ProductRepository>(ProductRepository::of(RepositoryType::TXT));
+	std::list<Product*> products = (*repo)->get();
+
+	uint8_t minMarketCost = std::atoi(args[0].c_str());
+
+	std::cout << "Список продуктов с ценой продажи больше " << args[0] << ": " << std::endl;
+	for (std::list<Product*>::iterator it = products.begin(); it != products.end(); ++it)
+	{
+		auto i = *it;
+		if (i->marketCost >= minMarketCost) 
+		{
+			std::cout << "Имя продукта: " << i->name << '\t' << "Закуплено: " << i->amountBought << '\t' << "Продано: " << i->amountSold << '\t' << "Цена закупки: " << i->primaryCost << '\t' << "Выходная цена: " << i->marketCost << std::endl;
+		}
+	}
+}
+
+uint16_t GetAllFilteredCommand::requiredArgsCount()
+{
+	return 1;
+}
+
+std::string GetAllFilteredCommand::commandManual()
+{
+	return "Введите пороговое значение цены продажи продукта.";
+}
+
+
 void DelCommand::execute(std::string* args)
 {
 	if (!Session::getCurrent()->isPromoted())
@@ -194,7 +227,7 @@ uint16_t DelCommand::requiredArgsCount()
 
 std::string DelCommand::commandManual()
 {
-	return "Введите название продукта, подлежащего удалению. Для получения списка продуктов введите команду \'getall\'";
+	return "Введите название продукта, подлежащего удалению. Для получения списка продуктов введите цифру \'1\'";
 }
 
 void SaveCommand::execute(std::string* args)
@@ -355,11 +388,11 @@ void MainInterface::deploy()
 
 	if (Session::getCurrent()->isPromoted()) 
 	{
-		std::cout << "Список команд для ввода: \n" << "1 - вывод списка всех продуктов\n" << "2 - вывод конкретного продукта по имени\n" << "3 - вывод итоговой прибыли, необходимы права администратора\n" << "5 - сохранение или изменение продукта, необходимы права администратора\n" << "6 - удаление существующего продукта по имени, необходимы права администратора\n" << "exit - завершение работы\n";
+		std::cout << "Список команд для ввода: \n" << "1 - вывод списка всех продуктов\n" << "2 - вывод конкретного продукта по имени\n" << "3 - вывод итоговой прибыли, необходимы права администратора\n" << "5 - сохранение или изменение продукта, необходимы права администратора\n" << "6 - удаление существующего продукта по имени, необходимы права администратора\n" << "7 - вывод продуктов с ценой продажи выше введенной\n" << "exit - завершение работы\n";
 	}
 	else
 	{
-		std::cout << "Список команд для ввода: \n" << "1 - вывод списка всех продуктов\n" << "2 - вывод конкретного продукта по имени\n" << "4 - приобретение продукта по имени\n" << "exit - завершение работы\n";
+		std::cout << "Список команд для ввода: \n" << "1 - вывод списка всех продуктов\n" << "2 - вывод конкретного продукта по имени\n" << "4 - приобретение продукта по имени\n" << "7 - вывод продуктов с ценой продажи выше введенной\n" << "exit - завершение работы\n";
 	}
 	
 	while (true)
@@ -374,7 +407,7 @@ void MainInterface::deploy()
 				return;
 			}
 
-		} while (str != "1" && str != "2" && str != "3" && str != "4" && str != "5" && str != "6");
+		} while (str != "1" && str != "2" && str != "3" && str != "4" && str != "5" && str != "6" && str != "7");
 
 		SmartPointer<Command>* command = new SmartPointer<Command>(Command::of(atoi(str.c_str())));
 		if (command)

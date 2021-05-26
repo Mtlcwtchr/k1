@@ -44,6 +44,14 @@ public:
 	virtual std::string commandManual();
 };
 
+class GetAllFilteredCommand : public Command
+{
+public:
+	virtual void execute(std::string* args);
+	virtual uint16_t requiredArgsCount();
+	virtual std::string commandManual();
+};
+
 class SaveCommand : public Command
 {
 public:
