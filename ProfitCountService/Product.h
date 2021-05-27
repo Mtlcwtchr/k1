@@ -62,7 +62,6 @@ struct Product
 		str.erase(0, pos + 1);
 
 		pos = str.find(":");
-		std::cout << str.find(".");
 		if (str.find(".") != std::string::npos)
 		{
 			prod->marketCost = std::stof(str.substr(0, pos).replace(str.find("."), 1, ",").c_str());
