@@ -180,7 +180,7 @@ void GetAllFilteredCommand::execute(std::string* args)
 	SmartPointer<ProductRepository>* repo = new SmartPointer<ProductRepository>(ProductRepository::of(RepositoryType::TXT));
 	std::list<Product*> products = (*repo)->get();
 
-	double minMarketCost = std::atof(args[0].c_str());
+	double minMarketCost = std::stof(args[0].c_str());
 
 	std::cout << "Список продуктов с ценой продажи больше " << args[0] << ": " << std::endl;
 	for (std::list<Product*>::iterator it = products.begin(); it != products.end(); ++it)

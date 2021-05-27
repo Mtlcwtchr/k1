@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 
 struct Product
 {
@@ -50,11 +51,26 @@ struct Product
 
 
 		pos = str.find(":");
-		prod->primaryCost = std::atof(str.substr(0, pos).replace(str.find("."), 1, ",").c_str());
+		if (str.find(".") != std::string::npos)
+		{
+			prod->primaryCost = std::stof(str.substr(0, pos).replace(str.find("."), 1, ",").c_str());
+		}
+		else
+		{
+			prod->primaryCost = std::stof(str.substr(0, pos).c_str());
+		}
 		str.erase(0, pos + 1);
 
 		pos = str.find(":");
-		prod->marketCost = std::atof(str.substr(0, pos).replace(str.find("."), 1, ",").c_str());
+		std::cout << str.find(".");
+		if (str.find(".") != std::string::npos)
+		{
+			prod->marketCost = std::stof(str.substr(0, pos).replace(str.find("."), 1, ",").c_str());
+		} 
+		else
+		{
+			prod->marketCost = std::stof(str.substr(0, pos).c_str());
+		}
 		str.erase(0, pos + 1);
 
 		return prod;
