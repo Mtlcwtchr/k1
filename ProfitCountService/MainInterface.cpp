@@ -267,7 +267,7 @@ uint16_t SaveCommand::requiredArgsCount()
 
 std::string SaveCommand::commandManual()
 {
-	return "¬ведите им€ продукта, количество закупки, размер продаж продукта, цену закупки и цену продажи продукта, раздел€€ данные пробелом или клавишей return\n ”чтите, что при введении имени уже существующего в базе продукта его значени€ перезапишутс€ вместо создани€ нового продукта";
+	return "¬ведите им€ продукта, количество закупки, размер продаж продукта, цену закупки и цену продажи продукта, раздел€€ данные клавишей return\n ”чтите, что при введении имени уже существующего в базе продукта его значени€ перезапишутс€ вместо создани€ нового продукта";
 }
 
 void BuyCommand::execute(std::string* args)
@@ -419,7 +419,9 @@ void MainInterface::deploy()
 				std::cout << (*command)->commandManual() << std::endl;
 				for (int i = 0; i < requiredArgsCount; ++i)
 				{
-					std::cin >> args[i];
+					std::cin.clear();
+					std::cin.ignore();
+					std::getline(std::cin, args[i]);
 				}
 				std::cout << "—пасибо, данные прин€ты" << std::endl;
 			}

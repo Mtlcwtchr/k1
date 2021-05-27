@@ -20,15 +20,20 @@ Product* TxtProductRepository::get(std::string name)
 	Product* prodread = new Product();
 	while (!in.eof())
 	{
-		in >> prodread->name >> prodread->amountBought >> prodread->amountSold >> prodread->primaryCost >> prodread->marketCost;
-		if (prodread->name == name)
+		std::string prod;
+		std::getline(in, prod);
+		if (prod != "\0")
 		{
-			res = prodread;
-			break;
+			prodread = Product::fromString(prod);
+			if (prodread->name == name)
+			{
+				res = prodread;
+				break;
+			}
 		}
 	}
 
-	if (res != prodread)
+	if (res && res != prodread)
 	{
 		delete prodread;
 	}
@@ -52,9 +57,14 @@ std::list<Product*> TxtProductRepository::get()
 
 	while (!in.eof())
 	{
-		Product* prodread = new Product();
-		in >> prodread->name >> prodread->amountBought >> prodread->amountSold >> prodread->primaryCost >> prodread->marketCost;
-		products.push_back(prodread);
+		Product* prodread;
+		std::string prod;
+		std::getline(in, prod);
+		if (prod != "\0")
+		{
+			prodread = Product::fromString(prod);
+			products.push_back(prodread);
+		}
 	}
 
 	in.close();
@@ -96,7 +106,7 @@ Product* TxtProductRepository::save(Product* prod)
 	for (std::list<Product*>::iterator it = products.begin(); it != products.end(); ++it)
 	{
 		auto i = *it;
-		out << i->name << '\t' << i->amountBought << '\t' << i->amountSold << '\t' << i->primaryCost << '\t' << i->marketCost;
+		out << i->name << ':' << i->amountBought << ':' << i->amountSold << ':' << i->primaryCost << ':' << i->marketCost << '\n';
 	}
 
 	out.close();
@@ -131,7 +141,7 @@ void TxtProductRepository::del(std::string name)
 	for (std::list<Product*>::iterator it = products.begin(); it != products.end(); ++it)
 	{
 		auto i = *it;
-		out << i->name << '\t' << i->amountBought << '\t' << i->amountSold << '\t' << i->primaryCost << '\t' << i->marketCost;
+		out << i->name << ':' << i->amountBought << ':' << i->amountSold << ':' << i->primaryCost << ':' << i->marketCost << '\n';
 	}
 
 	out.close();
