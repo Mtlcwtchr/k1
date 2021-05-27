@@ -1,10 +1,2 @@
-﻿  MainInterface.cpp
-D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\Product.h(33,34): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-  ProductRepository.cpp
-D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\Product.h(33,34): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-  SmartPointer.cpp
-D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\Product.h(33,34): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-  TotalDifferenceCalculator.cpp
-D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\Product.h(33,34): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-  Generating Code...
+﻿  Main.cpp
   ProfitCountService.vcxproj -> D:\CPPprog\cpp\kursach\ProfitCountService\Debug\ProfitCountService.exe

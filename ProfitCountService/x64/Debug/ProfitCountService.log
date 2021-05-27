@@ -1,13 +1,11 @@
-﻿  AuthRepository.cpp
-  Main.cpp
+﻿  Main.cpp
+D:\Windows Kits\10\Include\10.0.19041.0\um\winnt.h(173,1): fatal error C1189: #error:  "No Target Architecture"
   MainInterface.cpp
-D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\Product.h(32,34): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\Product.h(33,34): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   ProductRepository.cpp
-D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\Product.h(32,34): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-  Session.cpp
+D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\Product.h(33,34): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   SmartPointer.cpp
-D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\Product.h(32,34): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\Product.h(33,34): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   TotalDifferenceCalculator.cpp
-D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\Product.h(32,34): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\Product.h(33,34): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   Generating Code...
-  ProfitCountService.vcxproj -> D:\CPPprog\cpp\kursach\ProfitCountService\x64\Debug\ProfitCountService.exe
