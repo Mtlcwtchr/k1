@@ -418,9 +418,8 @@ void MainInterface::deploy()
 			{
 				std::cout << (*command)->commandManual() << std::endl;
 				for (int i = 0; i < requiredArgsCount; ++i)
-				{
-					std::cin.clear();
-					std::cin.ignore();
+				{	
+					std::cin >> ws;
 					std::getline(std::cin, args[i]);
 				}
 				std::cout << "Спасибо, данные приняты" << std::endl;

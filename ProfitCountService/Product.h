@@ -50,11 +50,11 @@ struct Product
 
 
 		pos = str.find(":");
-		prod->primaryCost = std::atof(str.substr(0, pos).c_str());
+		prod->primaryCost = std::atof(str.substr(0, pos).replace(str.find("."), 1, ",").c_str());
 		str.erase(0, pos + 1);
 
 		pos = str.find(":");
-		prod->marketCost = std::atof(str.substr(0, pos).c_str());
+		prod->marketCost = std::atof(str.substr(0, pos).replace(str.find("."), 1, ",").c_str());
 		str.erase(0, pos + 1);
 
 		return prod;
