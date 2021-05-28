@@ -1,2 +1,3 @@
-﻿  Main.cpp
+﻿  MainInterface.cpp
+D:\CPPprog\cpp\kursach\ProfitCountService\ProfitCountService\Product.h(33,34): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   ProfitCountService.vcxproj -> D:\CPPprog\cpp\kursach\ProfitCountService\Debug\ProfitCountService.exe

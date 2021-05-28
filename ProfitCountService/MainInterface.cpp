@@ -6,6 +6,8 @@
 #include "Session.h"
 #include "SmartPointer.hpp"
 #include <iostream>
+#include <fstream>
+#include <iomanip>
 #include <algorithm>
 
 using namespace dao;
@@ -182,15 +184,25 @@ void GetAllFilteredCommand::execute(std::string* args)
 
 	double minMarketCost = std::stof(args[0].c_str());
 
+	std::ofstream out("report.txt");
+
 	std::cout << "Список продуктов с ценой продажи больше " << args[0] << ": " << std::endl;
+	if (out)
+	{
+		out << "Список продуктов с ценой продажи больше " << args[0] << ": " << std::endl;
+		out << "Название продукта" << std::setw(20) << "Закуплено" << std::setw(20) << "Продано" << std::setw(20) << "Цена закупки" << std::setw(20) << "Цена продажи" << std::setw(20) << std::endl;
+	}
 	for (std::list<Product*>::iterator it = products.begin(); it != products.end(); ++it)
 	{
 		auto i = *it;
 		if (i->marketCost >= minMarketCost) 
 		{
 			std::cout << "Имя продукта: " << i->name << '\t' << "Закуплено: " << i->amountBought << '\t' << "Продано: " << i->amountSold << '\t' << "Цена закупки: " << i->primaryCost << '\t' << "Выходная цена: " << i->marketCost << std::endl;
+			if(out) out << i->name << std::setw(30) << i->amountBought << std::setw(30) << i->amountSold << std::setw(30) << i->primaryCost << std::setw(30) << i->marketCost << std::setw(30) << std::endl;
 		}
 	}
+
+	out.close();
 }
 
 uint16_t GetAllFilteredCommand::requiredArgsCount()
