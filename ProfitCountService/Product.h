@@ -1,8 +1,9 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include "IProfitable.h"
 
-struct Product
+struct Product : IProfitable
 {
 	std::string name;
 	uint16_t amountBought;
@@ -28,7 +29,7 @@ struct Product
 		this->marketCost = marketCost;
 	}
 
-	float calcProfit()
+	double calcProfit()
 	{
 		return amountSold * marketCost - amountBought * primaryCost;
 	}

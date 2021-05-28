@@ -51,6 +51,9 @@
     <ClCompile Include="SmartPointer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="IProfitable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RepositoryType.h">
@@ -78,6 +81,9 @@
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="SmartPointer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IProfitable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

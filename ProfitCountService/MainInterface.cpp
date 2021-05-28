@@ -339,7 +339,9 @@ void GetProfitCommand::execute(std::string* args)
 	SmartPointer<ProductRepository>* repo = new SmartPointer<ProductRepository>(ProductRepository::of(RepositoryType::TXT));
 	std::list<Product*> products = (*repo)->get();
 
-	float totalProfit = (new TotalDifferenceCalculator())->calcTotalProfit(products);
+	TotalDifferenceCalculator* calc = new TotalDifferenceCalculator();
+	double totalProfit = calc->calcTotalProfit<Product>(products);
+	delete calc;
 
 	std::cout << "Итоговая выручка составляет: " << totalProfit << std::endl;
 }

@@ -5,11 +5,11 @@
 class TotalDifferenceCalculator
 {
 public:
-	float calcTotalProfit(std::list<Product*> products)
+	template <typename T> double calcTotalProfit(std::list<T*> profitable)
 	{
-		float totalProfit = 0;
+		double totalProfit = 0;
 
-		for (std::list<Product*>::iterator it = products.begin(); it != products.end(); ++it)
+		for (std::list<Product*>::iterator it = profitable.begin(); it != profitable.end(); ++it)
 		{
 			totalProfit += (*it)->calcProfit();
 		}
